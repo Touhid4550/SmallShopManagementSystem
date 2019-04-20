@@ -1,0 +1,17 @@
+﻿@model SSMS.Models.Models.Customer
+<h2>Delete</h2>
+
+@{
+    ViewBag.Title = "Delete";
+}
+@if (ViewBag.SDeleted != null)
+{ 
+   
+    <p>Delete Successfully!!</p>
+}
+else if (ViewBag.NSDelete != null)
+{
+    <p>Delete Faild!!</p>
+}
+
+

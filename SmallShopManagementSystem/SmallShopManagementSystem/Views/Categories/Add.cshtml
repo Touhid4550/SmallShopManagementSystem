@@ -1,0 +1,38 @@
+﻿@model SSMS.Models.Models.Category
+
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+<form method="POST">
+    <h1>Category</h1>
+    @if (ViewBag.SMsg != null)
+    {
+        <p>@ViewBag.SMsg</p>
+    }
+    @if (ViewBag.FMsg != null)
+    {
+        <p>@ViewBag.FMsg</p>
+    }
+    <table>
+        <tr><td>@Html.LabelFor(c => c.Code)</td></tr>
+        <tr><td>@Html.TextBoxFor(c => c.Code)</td></tr>
+        <tr><td>@Html.LabelFor(c => c.Name)</td></tr>
+        <tr><td>@Html.TextBoxFor(c => c.Name)</td></tr>
+
+
+        <tr><td><input type="submit" value="Add" /></td></tr>
+       
+
+
+    </table>
+    
+    <p> @Html.ActionLink("Show", "Show", "Categories", new { @target = "_blank" })</p>
+    
+
+
+</form>

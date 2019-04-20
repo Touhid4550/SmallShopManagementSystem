@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F193091D-A976-46E3-88CB-FCA4E42882AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SSMS.DatabaseContext</RootNamespace>
+    <AssemblyName>SSMS.DatabaseContext</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DatabaseContext\SSMSDbContext.cs" />
+    <Compile Include="Migrations\201904091641536_Supplier_Model.cs" />
+    <Compile Include="Migrations\201904091641536_Supplier_Model.Designer.cs">
+      <DependentUpon>201904091641536_Supplier_Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904110414089_Category_Add.cs" />
+    <Compile Include="Migrations\201904110414089_Category_Add.Designer.cs">
+      <DependentUpon>201904110414089_Category_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904110446258_Product_Add.cs" />
+    <Compile Include="Migrations\201904110446258_Product_Add.Designer.cs">
+      <DependentUpon>201904110446258_Product_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904111752493_Add_New_Product_And_Category.cs" />
+    <Compile Include="Migrations\201904111752493_Add_New_Product_And_Category.Designer.cs">
+      <DependentUpon>201904111752493_Add_New_Product_And_Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904160737227_Customer_Add.cs" />
+    <Compile Include="Migrations\201904160737227_Customer_Add.Designer.cs">
+      <DependentUpon>201904160737227_Customer_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904180604196_Add_Product_dropdown_property.cs" />
+    <Compile Include="Migrations\201904180604196_Add_Product_dropdown_property.Designer.cs">
+      <DependentUpon>201904180604196_Add_Product_dropdown_property.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904190604302_PurchaseDetails.cs" />
+    <Compile Include="Migrations\201904190604302_PurchaseDetails.Designer.cs">
+      <DependentUpon>201904190604302_PurchaseDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SSMS.Models\SSMS.Models.csproj">
+      <Project>{9efc8fc7-a0b7-41f4-94aa-d5cab1c43546}</Project>
+      <Name>SSMS.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201904091641536_Supplier_Model.resx">
+      <DependentUpon>201904091641536_Supplier_Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904110414089_Category_Add.resx">
+      <DependentUpon>201904110414089_Category_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904110446258_Product_Add.resx">
+      <DependentUpon>201904110446258_Product_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904111752493_Add_New_Product_And_Category.resx">
+      <DependentUpon>201904111752493_Add_New_Product_And_Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904160737227_Customer_Add.resx">
+      <DependentUpon>201904160737227_Customer_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904180604196_Add_Product_dropdown_property.resx">
+      <DependentUpon>201904180604196_Add_Product_dropdown_property.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904190604302_PurchaseDetails.resx">
+      <DependentUpon>201904190604302_PurchaseDetails.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
